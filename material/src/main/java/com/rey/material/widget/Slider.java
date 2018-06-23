@@ -430,7 +430,7 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
             }
             else{
                 mThumbCurrentRadius = mThumbRadius;
-                mThumbFillPercent = (mAlwaysFillThumb || mThumbPosition != 0) ? 1 : 0;
+//                mThumbFillPercent = (mAlwaysFillThumb || mThumbPosition != 0) ? 1 : 0;
                 invalidate();
             }
         }
