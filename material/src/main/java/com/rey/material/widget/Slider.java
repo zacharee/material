@@ -426,7 +426,7 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
             if(transformAnimation) {
                 if(!mIsDragging)
                     mThumbRadiusAnimator.startAnimation(mThumbRadius);
-                mThumbStrokeAnimator.startAnimation(pos == 0 ? 0 : 1);
+//                mThumbStrokeAnimator.startAnimation(pos == 0 ? 0 : 1);
             }
             else{
                 mThumbCurrentRadius = mThumbRadius;
@@ -945,8 +945,12 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
         }
     }
 
-    public void startAnimation(int fillPercent) {
-        mThumbStrokeAnimator.startAnimation(fillPercent);
+    public boolean setThumbFillPercent(int fillPercent) {
+        return mThumbStrokeAnimator.startAnimation(fillPercent);
+    }
+
+    public boolean setThumbRadius(int radius) {
+        return mThumbRadiusAnimator.startAnimation(radius);
     }
 
     class ThumbRadiusAnimator implements Runnable{
