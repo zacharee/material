@@ -1095,7 +1095,6 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
         float mStartRadius;
         float mStartPosition;
         float mPosition;
-        float mFillPercent;
         int mDuration;
 
         public boolean isRunning(){
@@ -1111,7 +1110,6 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
             mStartPosition = mThumbPosition;
             mStartFillPercent = mThumbFillPercent;
             mStartRadius = mThumbCurrentRadius;
-            mFillPercent = mPosition == 0 ? 0 : 1;
             mDuration = mDiscreteMode && !mIsDragging ? mTransformAnimationDuration * 2 + mTravelAnimationDuration : mTravelAnimationDuration;
         }
 
@@ -1138,7 +1136,6 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
         public void stopAnimation() {
             mRunning = false;
             mThumbCurrentRadius = mDiscreteMode && mIsDragging ? 0 : mThumbRadius;
-            mThumbFillPercent = mAlwaysFillThumb ? 1 : mFillPercent;
             mThumbPosition = mPosition;
             if(getHandler() != null)
                 getHandler().removeCallbacks(this);
@@ -1154,7 +1151,6 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
             if(mDiscreteMode){
                 if(mIsDragging) {
                     mThumbPosition = (mPosition - mStartPosition) * value + mStartPosition;
-                    mThumbFillPercent = mAlwaysFillThumb ? 1 : ((mFillPercent - mStartFillPercent) * value + mStartFillPercent);
                 }
                 else{
                     float p1 = (float)mTravelAnimationDuration / mDuration;
@@ -1163,7 +1159,6 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
                         value = mInterpolator.getInterpolation(progress / p1);
                         mThumbCurrentRadius = mStartRadius * (1f - value);
                         mThumbPosition = (mPosition - mStartPosition) * value + mStartPosition;
-                        mThumbFillPercent = mAlwaysFillThumb ? 1 : ((mFillPercent - mStartFillPercent) * value + mStartFillPercent);
                     }
                     else if(progress > p2){
                         mThumbCurrentRadius = mThumbRadius * (progress - p2) / (1 - p2);
@@ -1172,7 +1167,6 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
             }
             else{
                 mThumbPosition = (mPosition - mStartPosition) * value + mStartPosition;
-                mThumbFillPercent = mAlwaysFillThumb ? 1 : ((mFillPercent - mStartFillPercent) * value + mStartFillPercent);
 
                 if(progress < 0.2)
                     mThumbCurrentRadius = Math.max(mThumbRadius + mThumbBorderSize * progress * 5, mThumbCurrentRadius);
