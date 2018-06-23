@@ -945,6 +945,10 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
         }
     }
 
+    public void startAnimation(int fillPercent) {
+        mThumbStrokeAnimator.startAnimation(fillPercent);
+    }
+
     class ThumbRadiusAnimator implements Runnable{
 
         boolean mRunning = false;
