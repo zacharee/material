@@ -953,6 +953,14 @@ public class Slider extends View implements ThemeManager.OnThemeChangedListener{
         return mThumbRadiusAnimator.startAnimation(radius);
     }
 
+    public boolean isThumbStrokeAnimatorRunning() {
+        return mThumbStrokeAnimator.mRunning;
+    }
+
+    public boolean isThumbRadiusAnimatorRunning() {
+        return mThumbRadiusAnimator.mRunning;
+    }
+
     class ThumbRadiusAnimator implements Runnable{
 
         boolean mRunning = false;
