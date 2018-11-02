@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -13,6 +12,8 @@ import com.rey.material.app.ThemeManager;
 import com.rey.material.drawable.CircularProgressDrawable;
 import com.rey.material.drawable.LinearProgressDrawable;
 import com.rey.material.util.ViewUtil;
+
+import androidx.annotation.NonNull;
 
 public class ProgressView extends View implements ThemeManager.OnThemeChangedListener{
 

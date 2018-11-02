@@ -24,11 +24,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.support.v4.text.TextUtilsCompat;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v4.view.ViewPropertyAnimatorCompat;
-import android.support.v4.widget.ListViewAutoScrollHelper;
-import android.support.v4.widget.PopupWindowCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -52,6 +47,12 @@ import com.rey.material.R;
 
 import java.lang.reflect.Method;
 import java.util.Locale;
+
+import androidx.core.text.TextUtilsCompat;
+import androidx.core.view.MotionEventCompat;
+import androidx.core.view.ViewPropertyAnimatorCompat;
+import androidx.core.widget.ListViewAutoScrollHelper;
+import androidx.core.widget.PopupWindowCompat;
 
 /**
  * This is a copy of android.support.v7.widget.ListPopupWindow.
@@ -751,10 +752,8 @@ public class ListPopupWindow {
             list.mListSelectionHidden = false;
             list.setSelection(position);
 
-            if (Build.VERSION.SDK_INT >= 11) {
-                if (list.getChoiceMode() != ListView.CHOICE_MODE_NONE) {
-                    list.setItemChecked(position, true);
-                }
+            if (list.getChoiceMode() != ListView.CHOICE_MODE_NONE) {
+                list.setItemChecked(position, true);
             }
         }
     }
@@ -1815,7 +1814,7 @@ public class ListPopupWindow {
             } catch (Exception e) {
                 Log.i(TAG, "Could not call setClipToScreenEnabled() on PopupWindow. Oh well.");
             }
-        } else if(clip && Build.VERSION.SDK_INT >= Build.VERSION_CODES.CUPCAKE) {
+        } else if(clip) {
             mPopup.setClippingEnabled(false);
         }
     }

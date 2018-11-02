@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
@@ -13,6 +12,8 @@ import com.rey.material.app.ThemeManager;
 import com.rey.material.drawable.PaddingDrawable;
 import com.rey.material.drawable.RippleDrawable;
 import com.rey.material.util.ViewUtil;
+
+import androidx.annotation.NonNull;
 
 public class CompoundButton extends android.widget.CompoundButton implements ThemeManager.OnThemeChangedListener {
 

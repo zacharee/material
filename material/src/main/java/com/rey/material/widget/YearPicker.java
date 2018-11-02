@@ -9,7 +9,6 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -26,6 +25,8 @@ import com.rey.material.util.ThemeUtil;
 import com.rey.material.util.TypefaceUtil;
 
 import java.util.Calendar;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by Rey on 12/26/2014.

@@ -3,7 +3,6 @@ package com.rey.material.demo;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,9 @@ import android.widget.CompoundButton;
 
 import com.rey.material.widget.RadioButton;
 
-public class SwitchesFragment extends Fragment{
+import androidx.fragment.app.Fragment;
+
+public class SwitchesFragment extends Fragment {
 
 	RadioButton rb1;
 	RadioButton rb2;

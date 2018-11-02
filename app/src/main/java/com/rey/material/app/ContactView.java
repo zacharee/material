@@ -15,9 +15,6 @@ import android.graphics.Rect;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.v4.view.GravityCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -35,6 +32,9 @@ import com.rey.material.widget.ImageButton;
 import com.rey.material.widget.RippleManager;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
+
+import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
 
 /**
  * Created by Administrator on 3/2/2015.

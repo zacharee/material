@@ -1,7 +1,6 @@
 package com.rey.material.app;
 
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created by Rey on 2/4/2015.

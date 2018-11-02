@@ -10,7 +10,6 @@ import android.graphics.Typeface;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
-import android.support.annotation.NonNull;
 import android.text.format.DateFormat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -25,6 +24,8 @@ import com.rey.material.util.ColorUtil;
 import com.rey.material.util.ThemeUtil;
 import com.rey.material.util.TypefaceUtil;
 import com.rey.material.util.ViewUtil;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by Rey on 12/19/2014.

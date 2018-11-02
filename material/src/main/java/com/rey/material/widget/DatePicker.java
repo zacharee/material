@@ -272,8 +272,7 @@ public class DatePicker extends ListView implements AbsListView.OnScrollListener
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void setFrictionIfSupported(float friction) {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            setFriction(friction);
+        setFriction(friction);
     }
 
     @Override

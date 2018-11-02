@@ -11,7 +11,6 @@ import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -30,6 +29,8 @@ import com.rey.material.drawable.OvalShadowDrawable;
 import com.rey.material.drawable.RippleDrawable;
 import com.rey.material.util.ThemeUtil;
 import com.rey.material.util.ViewUtil;
+
+import androidx.annotation.NonNull;
 
 public class FloatingActionButton extends View implements ThemeManager.OnThemeChangedListener {
 

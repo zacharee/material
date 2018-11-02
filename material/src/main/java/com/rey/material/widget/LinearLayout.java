@@ -4,13 +4,14 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 import com.rey.material.app.ThemeManager;
 import com.rey.material.drawable.RippleDrawable;
 import com.rey.material.util.ViewUtil;
+
+import androidx.annotation.NonNull;
 
 public class LinearLayout extends android.widget.LinearLayout implements ThemeManager.OnThemeChangedListener{
 

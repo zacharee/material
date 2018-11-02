@@ -11,10 +11,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -33,6 +31,8 @@ import com.rey.material.app.ThemeManager;
 import com.rey.material.drawable.ArrowDrawable;
 import com.rey.material.drawable.DividerDrawable;
 import com.rey.material.util.ThemeUtil;
+
+import androidx.annotation.NonNull;
 
 public class Spinner extends FrameLayout implements ThemeManager.OnThemeChangedListener{
 		
@@ -907,8 +907,7 @@ public class Spinner extends FrameLayout implements ThemeManager.OnThemeChangedL
             mPopup.show();
             final ListView lv = mPopup.getListView();
             if(lv != null){
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            	    lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+                lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             	lv.setSelection(getSelectedItemPosition());
                 if(mArrowDrawable != null && mArrowAnimSwitchMode)
                     lv.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {

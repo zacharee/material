@@ -10,11 +10,6 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.AppCompatAutoCompleteTextView;
-import android.support.v7.widget.AppCompatEditText;
-import android.support.v7.widget.AppCompatMultiAutoCompleteTextView;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Layout;
@@ -63,6 +58,12 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView;
+import androidx.core.view.GravityCompat;
 
 public class EditText extends FrameLayout implements ThemeManager.OnThemeChangedListener{
 
@@ -1606,11 +1607,9 @@ public class EditText extends FrameLayout implements ThemeManager.OnThemeChanged
      */
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public ActionMode.Callback getCustomSelectionActionModeCallback (){
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-			return mInputView.getCustomSelectionActionModeCallback();
+        return mInputView.getCustomSelectionActionModeCallback();
 
-		return null;
-	}
+    }
 
 	/**
      * Return the text the TextView is displaying as an Editable object.  If
@@ -2448,7 +2447,7 @@ public class EditText extends FrameLayout implements ThemeManager.OnThemeChanged
     */
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public boolean isTextSelectable (){
-        return Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB || mInputView.isTextSelectable();
+        return mInputView.isTextSelectable();
     }
 
 	/**
@@ -2848,8 +2847,7 @@ public class EditText extends FrameLayout implements ThemeManager.OnThemeChanged
      */
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public void setCustomSelectionActionModeCallback (ActionMode.Callback actionModeCallback){
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-			mInputView.setCustomSelectionActionModeCallback(actionModeCallback);
+        mInputView.setCustomSelectionActionModeCallback(actionModeCallback);
 	}
 
 	/**
@@ -3496,8 +3494,7 @@ public class EditText extends FrameLayout implements ThemeManager.OnThemeChanged
      */
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public void setTextIsSelectable (boolean selectable){
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-			mInputView.setTextIsSelectable(selectable);
+        mInputView.setTextIsSelectable(selectable);
 	}
 
 	/**
@@ -3688,7 +3685,7 @@ public class EditText extends FrameLayout implements ThemeManager.OnThemeChanged
 
 	}
 
-	private class InternalEditText extends AppCompatEditText{
+	private class InternalEditText extends AppCompatEditText {
 
 		public InternalEditText(Context context) {
 			super(context);
@@ -3778,8 +3775,7 @@ public class EditText extends FrameLayout implements ThemeManager.OnThemeChanged
         }
 
         void superOnCommitCorrection(CorrectionInfo info) {
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-                super.onCommitCorrection(info);
+            super.onCommitCorrection(info);
         }
 
         InputConnection superOnCreateInputConnection(EditorInfo outAttrs) {
@@ -3930,8 +3926,7 @@ public class EditText extends FrameLayout implements ThemeManager.OnThemeChanged
         }
 
         void superOnCommitCorrection(CorrectionInfo info) {
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-                super.onCommitCorrection(info);
+            super.onCommitCorrection(info);
         }
 
         InputConnection superOnCreateInputConnection(EditorInfo outAttrs) {
@@ -3987,7 +3982,7 @@ public class EditText extends FrameLayout implements ThemeManager.OnThemeChanged
         }
     }
 
-    private class InternalMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTextView{
+    private class InternalMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTextView {
 
         public InternalMultiAutoCompleteTextView(Context context) {
             super(context);
@@ -4107,8 +4102,7 @@ public class EditText extends FrameLayout implements ThemeManager.OnThemeChanged
         }
 
         void superOnCommitCorrection(CorrectionInfo info) {
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-                super.onCommitCorrection(info);
+            super.onCommitCorrection(info);
         }
 
         InputConnection superOnCreateInputConnection(EditorInfo outAttrs) {

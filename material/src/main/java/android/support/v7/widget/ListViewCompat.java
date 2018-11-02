@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 package android.support.v7.widget;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.graphics.drawable.DrawableWrapper;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -28,9 +27,12 @@ import android.widget.AbsListView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import java.lang.reflect.Field;
+
+import androidx.appcompat.graphics.drawable.DrawableWrapper;
+import androidx.core.graphics.drawable.DrawableCompat;
+
 /**
  * This class contains a number of useful things for ListView. Mainly used by
- * {@link android.support.v7.widget.ListPopupWindow}.
  *
  * @hide
  */
@@ -302,6 +304,8 @@ public class ListViewCompat extends ListView {
             mSelector.setEnabled(enabled);
         }
     }
+
+    @SuppressLint("RestrictedApi")
     private static class GateKeeperDrawable extends DrawableWrapper {
         private boolean mEnabled;
         public GateKeeperDrawable(Drawable drawable) {

@@ -13,7 +13,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -30,6 +29,8 @@ import com.rey.material.drawable.RippleDrawable;
 import com.rey.material.util.ColorUtil;
 import com.rey.material.util.ThemeUtil;
 import com.rey.material.util.ViewUtil;
+
+import androidx.annotation.NonNull;
 
 public class Switch extends View implements Checkable, ThemeManager.OnThemeChangedListener {
 		
@@ -650,7 +651,7 @@ public class Switch extends View implements Checkable, ThemeManager.OnThemeChang
          */
         private SavedState(Parcel in) {
             super(in);
-            checked = (Boolean)in.readValue(null);
+            checked = (Boolean)in.readValue(getClass().getClassLoader());
         }
 
         @Override

@@ -16,7 +16,6 @@ import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
@@ -48,6 +47,8 @@ import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by Rey on 3/2/2015.
@@ -447,7 +448,7 @@ public class ContactEditText extends EditText{
 
         private final String COLS[] = new String[]{
                 ContactsContract.CommonDataKinds.Phone.LOOKUP_KEY,
-                Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ? ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME_PRIMARY : ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+                ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME_PRIMARY,
                 ContactsContract.CommonDataKinds.Phone.NUMBER,
         };
 

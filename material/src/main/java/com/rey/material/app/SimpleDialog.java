@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.view.ViewCompat;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -20,6 +19,8 @@ import com.rey.material.widget.CompoundButton;
 import com.rey.material.widget.ListView;
 import com.rey.material.widget.RadioButton;
 import com.rey.material.widget.TextView;
+
+import androidx.core.view.ViewCompat;
 
 /**
  * Created by Rey on 12/16/2014.

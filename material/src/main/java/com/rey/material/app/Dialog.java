@@ -12,8 +12,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -35,10 +33,13 @@ import com.rey.material.util.ViewUtil;
 import com.rey.material.widget.Button;
 import com.rey.material.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+import androidx.core.view.ViewCompat;
+
 /**
  * Created by Rey on 12/10/2014.
  */
-public class Dialog extends android.app.Dialog{
+public class Dialog extends android.app.Dialog {
 
     private ContainerFrameLayout mContainer;
     private int mLayoutWidth = ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -1139,7 +1140,7 @@ public class Dialog extends android.app.Dialog{
 
     }
 
-    private class DialogCardView extends CardView{
+    private class DialogCardView extends CardView {
 
         private Paint mDividerPaint;
         private float mDividerPos = -1f;
