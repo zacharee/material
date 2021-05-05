@@ -39,8 +39,7 @@ import androidx.core.view.GravityCompat;
 /**
  * Created by Administrator on 3/2/2015.
  */
-public class ContactView extends FrameLayout implements Target{
-
+public class ContactView extends FrameLayout implements Target {
     private TextView mNameView;
     private TextView mAddressView;
     private AvatarDrawable mAvatarDrawable;
@@ -206,7 +205,7 @@ public class ContactView extends FrameLayout implements Target{
     }
 
     @Override
-    public void onBitmapFailed(Drawable errorDrawable) {
+    public void onBitmapFailed(Exception e, Drawable errorDrawable) {
         setAvatarDrawable(errorDrawable);
     }
 

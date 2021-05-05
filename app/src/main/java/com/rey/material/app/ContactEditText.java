@@ -54,7 +54,6 @@ import androidx.annotation.NonNull;
  * Created by Rey on 3/2/2015.
  */
 public class ContactEditText extends EditText{
-
     private MultiAutoCompleteTextView.Tokenizer mTokenizer;
 
     private HashMap<String, Recipient> mRecipientMap;
@@ -484,7 +483,7 @@ public class ContactEditText extends EditText{
             if(TextUtils.isEmpty(recipient.lookupKey))
                 v.setAvatarResource(mDefaultAvatarId);
             else
-                Picasso.with(getContext())
+                Picasso.get()
                         .load(Uri.withAppendedPath(ContactsContract.Contacts.CONTENT_LOOKUP_URI, recipient.lookupKey))
                         .placeholder(mDefaultAvatarId)
                         .into(v);
@@ -645,7 +644,7 @@ public class ContactEditText extends EditText{
             if(TextUtils.isEmpty(recipient.lookupKey))
                 v.setAvatarResource(mDefaultAvatarId);
             else
-                Picasso.with(getContext())
+                Picasso.get()
                         .load(Uri.withAppendedPath(ContactsContract.Contacts.CONTENT_LOOKUP_URI, recipient.lookupKey))
                         .placeholder(mDefaultAvatarId)
                         .into(v);
@@ -669,7 +668,7 @@ public class ContactEditText extends EditText{
             if(TextUtils.isEmpty(recipient.lookupKey))
                 setImageResource(mDefaultAvatarId);
             else
-                Picasso.with(getContext())
+                Picasso.get()
                         .load(Uri.withAppendedPath(ContactsContract.Contacts.CONTENT_LOOKUP_URI, recipient.lookupKey))
                         .placeholder(mDefaultAvatarId)
                         .into(this);
@@ -726,7 +725,7 @@ public class ContactEditText extends EditText{
         }
 
         @Override
-        public void onBitmapFailed(Drawable errorDrawable) {
+        public void onBitmapFailed(Exception e, Drawable errorDrawable) {
             setImageDrawable(errorDrawable);
         }
 
